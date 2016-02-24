@@ -144,7 +144,7 @@ print a  # [1]
 
 ## 2 Python中的元类(metaclass)
 
-这个非常的不常用,但是像ORM这种复杂的结构还是会需要的,详情请看:http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python
+这个非常的不常用,但是像ORM（Object-Relational Mapping 对象关系映射）这种复杂的结构还是会需要的,详情请看:http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python
 
 ## 3 @staticmethod和@classmethod
 
@@ -274,6 +274,16 @@ AttributeError: myClass instance has no attribute '__superprivate'
 
 但是有点丑..format就没有这些问题.你给的第二个问题也是这样,.format好看多了.
 
+```
+print('{0} is {1} years old. '.format(name, age)) #输出参数  
+print('{0} is a girl. '.format(name))  
+print('{0:.3} is a decimal. '.format(1/3)) #小数点后三位  
+print('{0:_^11} is a 11 length. '.format(name)) #使用_补齐空位  
+print('{first} is as {second}. '.format(first=name, second='Wendy')) #别名替换  
+print('My name is {0.name}'.format(open('out.txt', 'w'))) #调用方法  
+print('My name is {0:8}.'.format('Fred')) #指定宽度  
+```
+
 你为什么不用它?
 
 * 不知道它(在读这个之前)
@@ -342,7 +352,7 @@ http://stackoverflow.com/questions/3394835/args-and-kwargs
 
 ## 11 面向切面编程AOP和装饰器
 
-这个AOP一听起来有点懵,同学面阿里的时候就被问懵了...
+这个AOP（Aspect Oriented Programming）一听起来有点懵,同学面阿里的时候就被问懵了...
 
 装饰器是一个很著名的设计模式，经常被用于有切面需求的场景，较为经典的有插入日志、性能测试、事务处理等。装饰器是解决这类问题的绝佳设计，有了装饰器，我们就可以抽离出大量函数中与函数功能本身无关的雷同代码并继续重用。概括的讲，**装饰器的作用就是为已经存在的对象添加额外的功能。**
 
@@ -419,7 +429,7 @@ class Singleton(object):
 class MyClass(Singleton):
     a = 1
 ```
-
+对象的id相同。
 ### 2 共享属性
 
 创建实例时把所有实例的`__dict__`指向同一个字典,这样它们具有相同的属性和方法.
